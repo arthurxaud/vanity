@@ -1,7 +1,7 @@
 require "test_helper"
+require "vanity/commands/report"
 
 describe "bin/vanity" do
-
   before do
     not_collecting!
   end
@@ -27,7 +27,6 @@ describe "bin/vanity" do
   end
 
   it "responds to list" do
-    require "vanity/commands/list"
     Vanity::Commands.expects(:list)
     ARGV.clear
     ARGV << 'list'
@@ -35,7 +34,6 @@ describe "bin/vanity" do
   end
 
   it "responds to report" do
-    require "vanity/commands/report"
     Vanity::Commands.expects(:report)
     ARGV.clear
     ARGV << 'report'
