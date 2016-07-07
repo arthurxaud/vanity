@@ -8,7 +8,7 @@ class UseVanityController < ActionController::Base
   attr_accessor :current_user
 
   def index
-    render :text=>Vanity.ab_test(:pie_or_cake)
+    render :plain=>Vanity.ab_test(:pie_or_cake)
   end
 
   def js
