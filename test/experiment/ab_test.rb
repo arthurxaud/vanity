@@ -5,7 +5,8 @@ class AbTestController < ActionController::Base
   attr_accessor :current_user
 
   def test_render
-    render :plain=>Vanity.ab_test(:simple)
+    text = Vanity.ab_test(:simple)
+    render :plain=>text, :text=>text
   end
 
   def test_view
@@ -18,7 +19,7 @@ class AbTestController < ActionController::Base
 
   def track
     Vanity.track!(:coolness)
-    render :plain=>""
+    render :plain=>"", :text=>""
   end
 end
 
